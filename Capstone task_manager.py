@@ -1,15 +1,4 @@
 # Practical task for M03T09
-# Notes on task:
-# I struggled with the following:
-# - when a line of string (eg, and print line or input line)
-#   is too long. I'm hoping the syntax for these as correct. I
-#   used ChatGPT when it came to certain syntaxing issues like
-#   where to split lines, etc.
-# - try-except blocks. I know not to over-use them. I hope I didn't. I
-#   used ChatGPT for these as well especialy to explain certain aspects.
-# Nothing was copied and pasted form ChatGPT. I simply asked it 
-# for explanations.
-# I did not do the optional recusion task.
 
 # Importing external modules
 from datetime import datetime, date
