@@ -1,32 +1,21 @@
 # Practical task for M03T09
-# Notes on task:
-# I struggled with the following:
-# - when a line of string (eg, and print line or input line)
-#   is too long. I'm hoping the syntax for these as correct. I
-#   used ChatGPT when it came to certain syntaxing issues like
-#   where to split lines, etc.
-# - try-except blocks. I know not to over-use them. I hope I didn't. I
-#   used ChatGPT for these as well especialy to explain certain aspects.
-# Nothing was copied and pasted form ChatGPT. I simply asked it 
-# for explanations.
-# I did not do the optional recusion task.
 
 # Importing external modules
 from datetime import datetime, date
 
-# Initiating empty list and dictionary to be used when reading tasks and
-# users text files, respectively.
+# Initiating empty list and dictionary to be used 
+# when reading tasks and users text files, respectively.
 tasks = []
 user_dict = {}
 
 
 def read_user_file():
     '''Reads the users.txt file then adds each key-value pair 
-    (username-password pair) to the 'user_dict' dictionairy to be 
+    (username-password pair) to the 'user_dict' dictionary to be 
     used later on.
 
     Returns:
-    dictionairy: user_dict (username as key: password as value)).
+    dictionary: user_dict (username as key: password as value)).
     '''
     # Read user.txt file
     try:
@@ -64,7 +53,7 @@ def read_tasks_file():
                     continue  # Skip empty lines
 
                 # Reads each string into a list and define the properties
-                # Format propperties as well
+                # Format properties as well
                 tasks_lines = line.split(", ")
                 emp = tasks_lines[0].strip().lower()
                 title = tasks_lines[1].strip()
@@ -88,7 +77,7 @@ def update_tasks_file():
     stays current and up to date.
 
     Returns:
-    Prints a message if it was succesful or not.
+    Prints a message if it was successful or not.
     '''
 
     try:
@@ -99,7 +88,7 @@ def update_tasks_file():
                 # on it's own line then writes it to file.
                 line = ", ".join(task) + "\n"
                 file.write(line) 
-        print("Tasks file was successfully updated with new informaiton")
+        print("Tasks file was successfully updated with new information")
     except FileNotFoundError as e:  # Error message
         print(f"Something went wrong: {e}")
 
@@ -122,8 +111,8 @@ def user_login():
                 # Prompt user for password and format
                 passw = input("Please enter your password: ").strip().lower()
                 if user_dict.get(user) == passw:
-                    print("Login was successfull!")
-                    return current_user  # Exit function after successfull login
+                    print("Login was successful!")
+                    return current_user  # Exit function after successful login
                 # Print error message of password is not correct
                 else:
                     print("Invalid password. Please try again.")
@@ -200,7 +189,7 @@ def add_task():
     descript = input("Please describe the new task: ").capitalize()
     
     while True:
-        # Promt user for due date of task adn format it
+        # Prompt user for due date of task adn format it
         due_d_str = input("Please enter the due date (dd Mon YYYY): ").strip()
         # Format the input for due date
         try:
@@ -344,9 +333,9 @@ def view_mine():
                                         tasks[select][0] = edited_user
                                         print(
                                             "This task has been successfully "
-                                            "re-ssigned")
+                                            "re-assigned")
                                         update_tasks_file() # Update tasks.txt
-                                        break  # Exit loop after re-assignement
+                                        break  # Exit loop after re-assignment
                                     else:
                                         # Error if name does not exit
                                         print("That username does not exist.")
@@ -439,7 +428,7 @@ def delete_task():
     '''Reads tasks.txt file and prints out the task numbers with
     their titles.
 
-    It then asks the user which task to delte and updates the
+    It then asks the user which task to delete and updates the
     tasks.txt file.
     '''
     read_tasks_file()  # Reads updated tasks.txt file
@@ -465,7 +454,7 @@ def delete_task():
 
 def generate_report():
     '''Reads tasks.txt and user.txt files and performs calculations 
-    using the each task's properties especialy the:
+    using the each task's properties especially the:
     - username
     - assignment date
     - due date
@@ -503,7 +492,7 @@ def generate_report():
         if task[5].strip().lower() == "no" and due < today:
             overdue_tasks += 1  # Increment 'overdue' counter
     try:
-        # Caclculate pecentage of taks that are incomplete and overdue
+        # Calculate percentage of tasks that are incomplete and overdue
         perc_incomplete = (incomplete_tasks/total_num_tasks) * 100
         perc_overdue = (overdue_tasks/total_num_tasks) * 100
     except ZeroDivisionError:
@@ -541,7 +530,7 @@ def generate_report():
 
         # Loop through users in user_dict
         for user_key in user_dict:
-            # Initialize counters for each user's task statictics
+            # Initialize counters for each user's task statistics
             total_user_tasks = 0
             user_completed = 0
             user_incomplete = 0
@@ -637,7 +626,7 @@ def display_statistics():
         print("The file 'task_overview.txt does not exist.")
     
     try:
-        # Read user_overvie.txt file and print each line
+        # Read user_overview.txt file and print each line
         with open("user_overview.txt", "r") as file:
             # Read all line into a list
             lines = file.readlines()
@@ -678,7 +667,7 @@ while True:
             vm - view my tasks
             vc - view completed tasks
             del - delete tasks
-            ds - dislpay statistics
+            ds - display statistics
             gr - generate reports
             e - exit
             : '''
@@ -707,7 +696,7 @@ while True:
                 else:
                     # Error message for invalid selection by admin
                     print("Invalid selection. Please try again")
-            # Display the follwing menu is a non-admin user logged in
+            # Display the following menu is a non-admin user logged in
             elif logged_in != "admin":
                 menu = input(
                     '''Select one of the following options:
