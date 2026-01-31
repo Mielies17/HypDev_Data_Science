@@ -5,4 +5,4 @@ In this project I developed a Python programme to perform sentiment analysis on 
 
 ## Files
 - sentiment_analysis.ipynb: Jupyter Notebook in which Python script for sentiment analysis was developed
-- Datafiniti_Amazon_Consumer_Reviews_of_Amazon_Products_May19.csv: CSV file containing different product reviews
+- Datafiniti_Amazon_Consumer_Reviews_of_Amazon_Products_May19.csv: CSV file containing different product reviews. This file is not included due to GitHub's file size limit.
